@@ -27,40 +27,36 @@ body{
 
 /* Экраны */
 .screen{
-  position:fixed;
-  inset:0;
-  min-height:100svh;
-  display:none;
-  opacity:0;
-  transform:scale(.985);
-  transition:opacity var(--dur) ease, transform var(--dur) ease;
-  z-index:0;
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  display: none;
+  opacity: 0;
+  transition: opacity var(--dur) ease;
+  z-index: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
-.screen.active{display:block;opacity:1;transform:scale(1);z-index:1;}
-.screen.out{opacity:0;transform:scale(1.02);pointer-events:none;}
+.screen.active{ display:block; opacity:1; z-index:1; }
+.screen.out{ opacity:0; pointer-events:none; }
 
-/* Фонк */
-.fullbg{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none;}
+/* Фон */
+.fullbg{ position:absolute; inset:0; overflow:hidden; z-index:0; pointer-events:none; }
 .fullbg img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-  filter:brightness(.85) saturate(.95);
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  display:block; filter:brightness(.85) saturate(.95);
 }
 
+/* Контент */
 .overlay{
   position:relative;
   z-index:1;
-  min-height:100svh;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   padding:24px 24px 80px;
+  min-height:auto;
 }
 
 .wrap{max-width:1100px;margin:0 auto;padding:22px;}
