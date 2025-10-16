@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Подземелья Слизерина</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Тыква найдена -->
+  <div id="popup" class="popup">
+    <div class="popup-box">
+      <p class="popup-text"></p>
+      <button class="btn popup-close">Ура</button>
+    </div>
+  </div>
+
+  <!-- Окно пустой тыквы -->
+  <div id="popup-empty" class="popup" aria-hidden="true">
+    <div class="popup-box" role="dialog" aria-modal="true">
+      <div class="popup-text">🙈 Здесь тыквы нет. Ваше чутьё вас подвело.</div>
+      <div class="btns">
+        <button class="btn" data-close="popup-empty">Понятно</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Главная -->
+  <section id="s0" class="screen active" data-go="s_intro1">
+    <div class="fullbg">
+      <picture>
+        <source media="(max-width: 640px)" srcset="images/hero-mobile.jpg">
+        <img src="images/hero-desktop.jpg" alt="Подземелья Слизерина">
+      </picture>
+    </div>
+    <div class="overlay">
+      <h1 class="title">Добро пожаловать в Подземелья Слизерина</h1>
+      <div class="hint">Кликните в любом месте, чтобы продолжить</div>
+    </div>
+  </section>
+
+  <!-- ===== Коридорчики пурурумчики ===== -->
+  <section id="s_intro1" class="screen">
+    <div class="fullbg"><img src="images/bg-fork.jpg" alt=""></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card">
+        <div class="topline"><h2>Вы спустились по лестнице в подземелья Хогвартса. Перед вами длинный мрачный коридор. Вы всматриваетесь в следы, оставленные тыквой. Куда они ведут?</h2></div>
+        <div class="grid">
+          <article class="choice" data-go="dead_entrance">
+            <div class="ph"><img src="images/card-voices.jpg" alt=""></div>
+            <div class="label">К шуму и звуку голосов</div>
+          </article>
+          <article class="choice" data-go="stairs_down">
+            <div class="ph"><img src="images/card-stairs.jpg" alt=""></div>
+            <div class="label">К лестнице вниз</div>
+          </article>
+          <article class="choice" data-go="deep_corridor">
+            <div class="ph"><img src="images/card-corridor.jpg" alt=""></div>
+            <div class="label">Дальше по коридору</div>
+          </article>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ===== Лево право ===== -->
+  <section id="dead_entrance" class="screen">
+    <div class="fullbg"><img src="images/bg-fork.jpg" alt=""></div>
+    <div class="overlay">
+      <div class="wrap">
+        <div class="card centered">
+          <div class="topline">
+            <h2>Перед вами развилка. Тишина, шорох, запах старого камня... Куда теперь?</h2>
+          </div>
+          <div class="btns">
+            <a class="btn" data-go="left_corridor">Влево</a>
+            <a class="btn" data-go="s1b">Вправо</a>
+          </div>
+
+          <div class="btns">
+            <button class="btn"
+              data-action="empty-search"
+              data-empty-text="🙈 Здесь же ничего нет, зачем..."
+              data-locked-text="😵 Тут ничего нет, а вы устали до изнеможения. Идите спать."
+              data-locked-go="s0">Искать здесь</button>
+            <a class="btn" data-go="s_intro1">Не сюда, разворачиваемся</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Лево руля ===== -->
+  <section id="left_corridor" class="screen">
+    <div class="fullbg"><img src="images/liverooms.png" alt=""></div>
+    <div class="overlay">
+      <div class="wrap">
+        <div class="card centered">
+          <div class="pill">Жилое крыло</div>
+          <h2>Вы попадаете в длинный коридор с множеством именных дверей. За некоторыми слышится смех, за другими — храп. Куда же тыква подевалась?</h2>
+
+          <div class="btns">
+            <a class="btn" data-go="door_final">Следы ведут за одну из дверей</a>
+            <a class="btn" data-go="owl_corridor">Следы ведут дальше по коридору</a>
+            <a class="btn" data-go="dead_entrance">Не сюда, разворачиваемся</a>
+          </div>
+
+          <div class="btns">
+            <button class="btn"
+              data-action="empty-search"
+              data-empty-text="🙈 Здесь тыквы нет."
+              data-locked-text="😵 Вы обыскались до изнеможения. Идите спать."
+              data-locked-go="s0">Искать здесь</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="door_final" class="screen">
+    <div class="fullbg"><img src="images/room.png" alt=""></div>
+    <div class="overlay">
+      <div class="wrap">
+        <div class="card centered">
+          <div class="pill">Жилое крыло</div>
+          <p>Неужели тыква задумала укрыться в одной из комнат? Какой кошмар! Здесь повсюду тыквенные семечки...</p>
+          <div class="btns">
+            <button class="btn" data-action="search-pumpkin">Искать здесь</button>
+            <a class="btn" data-go="left_corridor">Развернуться</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="owl_corridor" class="screen">
+    <div class="fullbg"><img src="images/sowa-door.png" alt=""></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Совятня</div>
+        <h2>Вы слышите уханье сов. Неужели всё это время вы следовали за совой, а не за тыквой? Бред какой-то!</h2>
+        <div class="btns">
+          <a class="btn" data-go="owl_final">Открыть дверь</a>
+          <a class="btn" data-go="left_corridor">Развернуться</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="owl_final" class="screen">
+    <div class="fullbg"><img src="images/sowa.png" alt=""></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Совятня</div>
+        <p>Вы делаете шаг и слышите хруст. Кажется, вы наступили на крысиные кости. Вы поднимаете взгляд и замечаете, что на вас уставились десятки пар сонных совиных глаз.</p>
+        <div class="btns">
+          <button class="btn"
+            data-action="empty-search"
+            data-empty-text="🙈 В Совятне тыквы нет, только совы смотрят осуждающе."
+            data-locked-text="😵 Вы обыскались и ничего не нашли. Идите спать."
+            data-locked-go="s0">Искать здесь</button>
+          <a class="btn" data-go="owl_corridor">Развернуться</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ===== Право руля ===== -->
+  <section id="s1b" class="screen">
+    <div class="fullbg"><img src="images/bg-fork.jpg" alt=""></div>
+    <div class="overlay">
+      <div class="wrap">
+        <div class="card centered">
+          <h2>Следы ведут всё дальше. Не похоже, что тыква тут, но вы можете осмотреться.</h2>
+          <div class="btns">
+            <a class="btn" data-go="s1b_cozy">Она точно устроилась там, где тепло и уютно</a>
+            <a class="btn" data-go="s1b_light">Пойду к запаху попкорна, вдруг тыква голодная</a>
+            <a class="btn" data-go="s1b_ash">Туда, где слышно потрескивание огня</a>
+            <a class="btn" data-go="dead_entrance">Назад</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s1b_cozy" class="screen">
+    <div class="fullbg"><img src="images/opendoor.png" alt="Открытая дверь Слизерина"></div>
+    <div class="overlay">
+      <div class="wrap">
+        <div class="card centered">
+          <h2>В обычные дни здесь шумно, но этим вечером многие Слизеринцы закрылись в своих комнатах. Вы слышите шорох и… это что, тыква катается?</h2>
+          <div class="btns">
+            <a class="btn" data-go="s1final">Бежать за ней</a>
+            <a class="btn" data-go="s1b">Развернуться</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s1final" class="screen">
+    <div class="fullbg"><img src="images/studentroom.png" alt=""></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Общий зал</div>
+        <p>Дверь открывается. Вы оказываетесь в общем зале факультета Слизерин, но тыквы нигде не видно... Вы осторожно осматриваетесь. Бум! Что-то ударило вас по голове и вы падаете.</p>
+        <p><strong>Поздравляем, вы были атакованы тыквой в Общем Зале и лежите без сознания!</strong></p>
+        <div class="btns">
+          <button class="btn" data-action="search-pumpkin">Постараться посмотреть на тыкву</button>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="s1b_light" class="screen">
+    <div class="fullbg"><img src="images/kino.png" alt=""></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Кинотеатр</div>
+        <h2>Мигание становится ярче. А ещё вы чувствуете запах... попкорна?</h2>
+        <div class="btns">
+          <a class="btn" data-go="cinema_final">Открыть дверь</a>
+          <a class="btn" data-go="s1b">Назад</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="cinema_final" class="screen">
+    <div class="fullbg"><img src="images/kino.png" alt="Кинотеатр факультета Слизерин"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Кинотеатр</div>
+        <p>Вы заходите в тускло освещённый зал. На экране показывают незнакомый вам фильм, но это сейчас неважно. Осмотревшись, на одном из кресел вы замечаете странную подушку.</p>
+        <div class="btns">
+          <button class="btn"
+            data-action="empty-search"
+            data-empty-text="🙈 Это просто подушка."
+            data-locked-text="😵 Вы обыскались до изнеможения. Идите спать."
+            data-locked-go="s0">
+            Осмотреть</button>
+          <a class="btn" data-go="s1b">Пойти назад</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="s1b_ash" class="screen">
+    <div class="fullbg"><img src="images/kamin.png" alt="Каминная факультета Слизерин"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Каминная</div>
+        <h2>Здесь воздух заметно теплее, и вы чувствуете, как вас чуть прикумарило. Вот тыква чертовка, задумала вас усыпить!</h2>
+        <div class="btns">
+          <a class="btn" data-go="fireplace_final">Открыть дверь</a>
+          <a class="btn" data-go="s1b">Развернуться</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="fireplace_final" class="screen">
+    <div class="fullbg"><img src="images/kamin.png" alt="Каминная факультета Слизерин"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Каминный зал</div>
+        <h2>Каминная факультета Слизерин</h2>
+        <p>Вы заходите в уютную комнату. Здесь очень тепло и уютно, и вы бы с радостью вздремнули, но снова слышите шепот.</p>
+        <div class="btns">
+          <button class="btn" data-action="search-pumpkin">Искать здесь</button>
+          <a class="btn" data-go="s1b">Развернуться</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- ===== Дальше по коридору ===== -->
+  <section id="deep_corridor" class="screen">
+    <div class="fullbg"><img src="images/bg-fork.jpg" alt=""></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <h2>И вы снова в длинющем коридоре. Это что, коридор в коридоре? Здесь есть следы тыквы, может, осмотреться?</h2>
+        <div class="btns">
+          <a class="btn" data-go="slyth_main_final">Идти вперед</a>
+          <a class="btn" data-go="corridor_next">Свернуть направо</a>
+          <a class="btn" data-go="s_intro1">Назад</a>
+        </div>
+        <div class="btns">
+          <div class="btns">
+           <button class="btn"
+          data-action="empty-search"
+          data-empty-text="Вы видите следы, но тыквы здесь нет"
+          data-locked-text="😵 Вы обыскались до изнеможения. Идите спать."
+          data-locked-go="s0">
+           Осмотреться тут
+           </button>
+       </div>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  
+  <section id="slyth_main_pre" class="screen">
+    <div class="fullbg"><img src="images/koridor.png" alt="Главный коридор Слизерина"></div>
+    <div class="overlay">
+      <div class="wrap">
+        <div class="card centered">
+          <div class="pill">Главный коридор</div>
+          <p>Что-то задело вашу ногу! Вы отпрыгиваете, и осмотревшись, видите как тыква укатывается дальше по коридору</p>
+          <div class="btns">
+           <a class="btn" data-go="slyth_main_final">Броситься в погоню</a>
+           <a class="btn" data-go="s_intro1">Испугаться и пойти назад</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section id="slyth_main_final" class="screen">
+    <div class="fullbg"><img src="images/koridor.png" alt="Главный коридор Слизерина"></div>
+    <div class="overlay">
+      <div class="wrap">
+        <div class="card centered">
+          <div class="pill">Главный коридор</div>
+          <p>Вы решаете броситься в погоню немотря не на что. Пол здесь мокрый и скользкий, и вы, конечно, подсказльзываетесь. </p>
+          <p>Открыв глаза, вы понимаете, что вам тяжело вздохнуть. На вашей груди сидит тыква.</p>
+
+          <div class="btns">
+            <button class="btn" data-action="search-pumpkin">Схватить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="corridor_next" class="screen">
+    <div class="fullbg"><img src="images/koridor2.png" alt=""></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <h2>В этой части подземелий как всегда немноголюдно. Похоже, тыква точно знала, где прятаться</h2>
+
+        <div class="btns">
+          <a class="btn" data-go="reading_pre">К библиотеке</a>
+          <a class="btn" data-go="prefects_pre">К административному крылу</a>
+          <a class="btn" data-go="deep_corridor">Развернуться</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+
+  <section id="reading_pre" class="screen">
+    <div class="fullbg"><img src="images/library.png" alt="Библиотечные своды"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Библиотека</div>
+        <h2>Любимый запах книг! А вы и не знали, что в в Слизерине есть библиотека! Вы медленно проходите мимо стеллажей, и вдруг... это что, плач? Кто там плачет?.</h2>
+        <div class="btns">
+          <a class="btn" data-go="reading_final">Открыть дверь</a>
+          <a class="btn" data-go="corridor_next">Назад</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="reading_final" class="screen">
+    <div class="fullbg"><img src="images/chitzal.png" alt="Читательский зал"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Финал</div>
+        <h2>Читательский зал</h2>
+        <p>Тыква устроилась между стопками книг на столе. Кажется, она что-то читает. Или делает вид.</p>
+        <p><strong>Поздравляем! Вы нашли тыкву в Читательском зале.</strong></p>
+        <div class="btns">
+           <button class="btn" data-action="search-pumpkin">Схватить</button>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="prefects_pre" class="screen">
+    <div class="fullbg"><img src="images/opendoor.png" alt="Административное крыло"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Административное крыло</div>
+        <h2>Если за тем поворотом не так уж и многолюдно, то тут и подавно пусто! Лучшего места чтобы спрятаться не сыскать. Куда же ведут тыквенные следы?</h2>
+        <div class="btns">
+          <a class="btn" data-go="prefects_final">Открыть дверь</a>
+          <a class="btn" data-go="corridor_next">Назад</a>
+          <button class="btn"
+          data-action="empty-search"
+          data-empty-text="Похоже, следы ведут дальше. Тыквы здесь нет"
+          data-locked-text="😵 Вы обыскались до изнеможения. Идите спать."
+          data-locked-go="s0">
+    Осмотреться тут
+  </button>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="prefects_final" class="screen">
+    <div class="fullbg"><img src="images/starosta.png" alt="Кабинет старост"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Кабинет старост</div>
+        <p>На двери красуется табличка "Староста Каталина Вульф", вы стучитесь. Она точно будет не в восторге, ведь её кабинет весь в тывквенных корочках и семечках! </p>
+        <div class="btns">
+        <button class="btn"
+          data-action="empty-search"
+          data-empty-text="Тут такой беспорядок, что вы ничего не смогли разобрать. Тыквы тут нет"
+          data-locked-text="😵 Вы обыскались до изнеможения. Идите спать."
+          data-locked-go="s0">
+    Осмотреться тут
+  </button>
+          <a class="btn" data-go="reading_pre">Идти дальше</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- Лестница вниз (кнопки) -->
+  <section id="stairs_down" class="screen">
+    <div class="fullbg"><img src="images/card-stairs.jpg" alt="Каменная лестница вниз"></div>
+    <div class="overlay">
+      <div class="wrap">
+        <div class="card centered">
+          <h2>Вы спускаетесь по скользкому камню. Чем ниже вы спускаетесь, тем больше повышается влажность вокруг. У Слизеринцев что, есть бассейн? Еще и пиццей пахнет. Вы задумываетесь, не решила ли тыква поплавать, перекусывая пиццой.</h2>
+          <div class="btns">
+            <a class="btn" data-go="lake_pre">Тыква точно плавает!</a>
+            <a class="btn" data-go="greenhouse_pre">Там что, цветы?</a>
+            <a class="btn" data-go="kitchen_pre">Следовать запаху еды, потому что вы голодны</a>
+          </div>
+          <div class="btns">
+            <a class="btn" data-go="s_intro1">Назад</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lake_pre" class="screen">
+    <div class="fullbg"><img src="images/ozero.png" alt=""></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Подземное озеро</div>
+        <h2>Вы попадаете в небольшой пещерный грот. Вы бы с радостью присели здесь, чтобы полюбоваться видами, но вас больше интерсует вопрос, почему следы тыквы привели вас именно сюда?</h2>
+        <div class="btns">
+          <a class="btn" data-go="lake_final">Осмотреться</a>
+          <a class="btn" data-go="stairs_down">Развернуться</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="lake_final" class="screen">
+    <div class="fullbg"><img src="images/ozero.png" alt="Подземное озеро"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Подземное озеро</div>
+        <h2>Подземное озеро</h2>
+        <p>Мерлин подери, никто ведь не поверит! Вы смотрите на тыкву, которая блаженно отдыхает на каменном берегу.</p>
+        <div class="btns">
+         <button class="btn"
+          data-action="empty-search"
+          data-empty-text="Тыква увернулась и убежала"
+          data-locked-text="😵 Вы обыскались до изнеможения. Идите спать."
+          data-locked-go="s0">
+    ОБроситься на тыкву
+  </button>
+          <a class="btn" data-go="stairs_down">Вернуться</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="greenhouse_pre" class="screen">
+    <div class="fullbg"><img src="images/opendoor.png" alt="Запотевшие стекла и зелень"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Оранжерея</div>
+        <h2>Вы уже и сами не понимаете, следуете ли вы за следами тыквы или за этим чудесным цветочным ароматом. </h2>
+        <div class="btns">
+          <a class="btn" data-go="greenhouse_final">Открыть дверь</a>
+          <a class="btn" data-go="stairs_down">Вернуться</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="greenhouse_final" class="screen">
+    <div class="fullbg"><img src="images/zveti.png" alt="Оранжерея"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Оранжерея</div>
+        <p>Вы попадаете в Слизеринскую Оранжерею. Идеальное место, чтобы спрятаться тыкве, не так ли?</p>
+        <p><strong>Поздравляем! Вы нашли тыкву в Оранжерее.</strong></p>
+        <div class="btns">
+         <button class="btn" data-action="search-pumpkin">Осмотреться</button>
+          <a class="btn" data-go="stairs_down">Выйти</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="kitchen_pre" class="screen">
+    <div class="fullbg"><img src="images/opendoor.png" alt="Тёплые кухни и медная посуда"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Кухня</div>
+        <h2>Вы решаете последовать к запаху еды, ведь вы очень голодны. На фоне урчащего живота страх перед гуляющей по подземелью тыквой совсем ничтожный!</h2>
+        <div class="btns">
+          <a class="btn" data-go="kitchen_final">Открыть дверь</a>
+          <a class="btn" data-go="stairs_down">Подождать с перекусом и вернуться к коридору</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="kitchen_final" class="screen">
+    <div class="fullbg"><img src="images/kuh.png" alt="Кухня"></div>
+    <div class="overlay">
+      <div class="wrap"><div class="card centered">
+        <div class="pill">Кухня</div>
+        <p>Вероятно, это самое опасное место для тыквы во всем замке! Но, вероятно, тыква сделала ставки именно на это. Стоит осмотреться?</p>
+         <div class="btns"></div>   
+         <button class="btn" data-action="search-pumpkin">Осмотреться</button>
+          <a class="btn" data-go="stairs_down">Да не, тыква сюда не пошла бы. Пойду я</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
