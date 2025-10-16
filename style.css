@@ -27,9 +27,9 @@ body{
 
 /* Экраны */
 .screen {
-  position: relative; /* Заменяем fixed на relative */
+  position: relative; /* гадина пока так */
   inset: 0;
-  height: 100vh; /* Используем vh вместо 100dvh */
+  height: 100vh; 
   display: none;
   opacity: 0;
   transition: opacity var(--dur) ease;
@@ -66,14 +66,14 @@ body{
 
 /* Контент */
 .overlay {
-  position: relative; /* Убедитесь, что используется relative */
+  position: relative; 
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  min-height: 100vh; /* Убедитесь, что min-height установлен на 100vh */
+  min-height: 100vh; 
 }
 
 /* адаптив для телефонов */
