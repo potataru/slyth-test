@@ -10,7 +10,7 @@
   --radius:16px;
 
 
-  --ui-size:1.2rem;     
+  --ui-size:1 rem;     
   --ui-lh:1.2;          
 }
 
@@ -47,16 +47,21 @@ body {
 .overlay {
   position: relative;
   z-index: 1;
-  min-height: 100dvh;
+  height: 100svh;                     
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 24px;
-
-  overflow: auto;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  overflow-y: auto;                   /* скролл тут */
   -webkit-overflow-scrolling: touch;
 }
+
+@supports (height: 100dvh) {
+  .overlay { height: 100dvh; }
+}
+
 .wrap{ max-width:1100px; margin:0 auto; padding:22px; }
 .card{
   background:#00000061; border:1px solid var(--edge); border-radius:var(--radius);
@@ -253,3 +258,4 @@ body {
 /* Аним */
 @keyframes pulse{ 0%,100%{opacity:.6;} 50%{opacity:1;} }
 @keyframes fadeUp{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
