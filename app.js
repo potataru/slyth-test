@@ -184,7 +184,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
   if (!e.target.matches('[data-action="search-pumpkin"]')) return;
 
-  const roll = Math.floor(Math.random() * 13) + 1;
+  const roll = Math.floor(Math.random() * 15) + 1;
   const popup = document.getElementById('popup');
   const popupText = popup.querySelector('.popup-text');
 
@@ -205,3 +205,4 @@ function setRealVh() {
 }
 window.addEventListener('load', setRealVh);
 window.addEventListener('resize', setRealVh);
+
