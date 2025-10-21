@@ -51,8 +51,10 @@ function show(targetId) {
     if (next.id === 's0') emptyClicks.clear();
     window.scrollTo({ top: 0, behavior: 'instant' });
     setTimeout(() => { isTransitioning = false; }, TRANSITION_MS);
+    // подгрузка
+  tuneImageLoadingForScreens();
   }
-}
+
 
 /* Обр */
 function handleClicks(e) {
@@ -205,4 +207,27 @@ function setRealVh() {
 }
 window.addEventListener('load', setRealVh);
 window.addEventListener('resize', setRealVh);
+
+// постепенная подгрузка картинок 
+
+function tuneImageLoadingForScreens() {
+  const active = document.querySelector('.screen.active');
+
+  // все неактивные экраны с низким приоритетом
+  document.querySelectorAll('.screen:not(.active) .fullbg img').forEach(img => {
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.setAttribute('fetchpriority', 'low');
+  });
+
+  // активный экран нормальный приоритет
+  if (active) {
+    active.querySelectorAll('.fullbg img').forEach(img => {
+      img.loading = 'eager';
+      img.decoding = 'async';
+      img.setAttribute('fetchpriority', 'high');
+    });
+  }
+}
+
 
