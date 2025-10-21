@@ -241,7 +241,7 @@ body {
 
 .enter-btn {
   position: absolute;
-  bottom: 500px;
+  bottom: 250px;
   left: 50%;
   transform: translateX(-50%);
   background: #0f151a;
@@ -319,6 +319,7 @@ body {
 /* Аним */
 @keyframes pulse{ 0%,100%{opacity:.6;} 50%{opacity:1;} }
 @keyframes fadeUp{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
 
 
 
