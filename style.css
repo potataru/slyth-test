@@ -80,17 +80,18 @@ body {
   text-align:center; margin:0 0 10px;
   text-shadow:0 10px 30px rgba(0,0,0,.6);
   
-.hint {
-  position: absolute;
-  bottom: 28px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: #c8ffc8;
-  font-size: .9rem;
-  opacity: .9;
-  animation: pulse 2s ease-in-out infinite;
+.hint{
+  position:absolute;
+  bottom:28px;
+  left:0;
+  right:0;
+  text-align:center;
+  color:#c8ffc8;
+  font-size:.9rem;
+  opacity:.9;
+  animation:pulse 2s ease-in-out infinite;
 }
+
 
 
 /* Карточки */
@@ -264,6 +265,7 @@ body {
 /* Аним */
 @keyframes pulse{ 0%,100%{opacity:.6;} 50%{opacity:1;} }
 @keyframes fadeUp{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
 
 
 
