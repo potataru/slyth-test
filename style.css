@@ -241,7 +241,7 @@ body {
 
 .enter-btn {
   position: absolute;
-  bottom: 40px;
+  bottom: 500px;
   left: 50%;
   transform: translateX(-50%);
   background: #0f151a;
@@ -249,9 +249,9 @@ body {
   border-radius: 12px;
   color: #c8ffc8;
   font-family: 'Amatic SC', cursive;
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 1px;
-  padding: 10px 24px;
+  padding: 14px 36px;
   cursor: pointer;
   transition: all 0.3s ease;
   animation: pulse 2s ease-in-out infinite;
@@ -319,6 +319,7 @@ body {
 /* Аним */
 @keyframes pulse{ 0%,100%{opacity:.6;} 50%{opacity:1;} }
 @keyframes fadeUp{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
 
 
 
