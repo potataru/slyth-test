@@ -99,6 +99,8 @@ function init() {
 
   document.addEventListener('click', handleClicks);
   enableKeyboardAccess();
+  // подгрузка
+  tuneImageLoadingForScreens();
 }
 
 window.addEventListener('load', init);
@@ -229,5 +231,6 @@ function tuneImageLoadingForScreens() {
     });
   }
 }
+
 
 
