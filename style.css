@@ -239,6 +239,29 @@ body {
 }
 .btn:hover{ background:#141b22; transform:translateY(-1px); }
 
+.enter-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f151a;
+  border: 1px solid var(--edge);
+  border-radius: 12px;
+  color: #c8ffc8;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.enter-btn:hover {
+  background: #172024;
+  transform: translateX(-50%) scale(1.05);
+}
+
 
 /* Лй */
 .dead-wrap{
@@ -296,6 +319,7 @@ body {
 /* Аним */
 @keyframes pulse{ 0%,100%{opacity:.6;} 50%{opacity:1;} }
 @keyframes fadeUp{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
 
 
 
