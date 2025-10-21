@@ -175,7 +175,7 @@ body {
   background:#29412891;
 }
 
-/* зачем мне это говно ну ладно */
+/* миним кнопки */
 
 .choice.text{
   background:#29412891;  
@@ -249,7 +249,7 @@ body {
   border-radius: 12px;
   color: #c8ffc8;
   font-family: 'Amatic SC', cursive;
-  font-size: 1rem;
+  font-size: 2rem;
   letter-spacing: 1px;
   padding: 14px 36px;
   cursor: pointer;
@@ -319,6 +319,7 @@ body {
 /* Аним */
 @keyframes pulse{ 0%,100%{opacity:.6;} 50%{opacity:1;} }
 @keyframes fadeUp{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
 
 
 
