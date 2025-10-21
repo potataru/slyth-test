@@ -52,7 +52,7 @@ function show(targetId) {
     window.scrollTo({ top: 0, behavior: 'instant' });
     setTimeout(() => { isTransitioning = false; }, TRANSITION_MS);
    }
-
+}
 
 /* Обр */
 function handleClicks(e) {
@@ -205,6 +205,7 @@ function setRealVh() {
 }
 window.addEventListener('load', setRealVh);
 window.addEventListener('resize', setRealVh);
+
 
 
 
