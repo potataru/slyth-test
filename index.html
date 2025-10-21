@@ -104,15 +104,8 @@
           <div class="btns">
             <a class="btn" data-go="door_final">Следы ведут за одну из дверей</a>
             <a class="btn" data-go="owl_corridor">Следы ведут дальше по коридору</a>
+            <button class="btn" data-action="show-pumpkin" data-pumpkin="8">Искать тыкву тут</button>
             <a class="btn" data-go="dead_entrance">Не сюда, разворачиваемся</a>
-          </div>
-
-          <div class="btns">
-            <button class="btn"
-              data-action="empty-search"
-              data-empty-text="🙈 Здесь тыквы нет."
-              data-locked-text="😵 Вы обыскались до изнеможения. Идите спать."
-              data-locked-go="s0">Искать здесь</button>
           </div>
         </div>
       </div>
@@ -127,7 +120,7 @@
           <div class="pill">Жилое крыло</div>
           <p>Неужели тыква задумала укрыться в одной из комнат? Какой кошмар! Здесь повсюду тыквенные семечки...</p>
           <div class="btns">
-            <button class="btn" data-action="search-pumpkin">Искать здесь</button>
+            <button class="btn" data-action="show-pumpkin" data-pumpkin="13">Искать здесь</button>
             <a class="btn" data-go="left_corridor">Развернуться</a>
           </div>
         </div>
@@ -178,6 +171,7 @@
             <a class="btn" data-go="s1b_cozy">Она точно устроилась там, где тепло и уютно</a>
             <a class="btn" data-go="s1b_light">Пойду к запаху попкорна, вдруг тыква голодная</a>
             <a class="btn" data-go="s1b_ash">Туда, где слышно потрескивание огня</a>
+            <button class="btn" data-action="show-pumpkin" data-pumpkin="10">Осмотреться тут</button>
             <a class="btn" data-go="dead_entrance">Назад</a>
           </div>
         </div>
@@ -190,9 +184,10 @@
     <div class="overlay">
       <div class="wrap">
         <div class="card centered">
-          <h2>В обычные дни здесь шумно, но этим вечером многие Слизеринцы закрылись в своих комнатах. Вы слышите шорох и… это что, тыква катается?</h2>
+          <h2>В обычные дни здесь шумно, но этим вечером многие Слизеринцы закрылись в своих комнатах. Вы слышите шорох и… это что, тыква катается? Куда она катится? Но ведь следы ведут к двери в чулан!</h2>
           <div class="btns">
-            <a class="btn" data-go="s1final">Бежать за ней</a>
+            <a class="btn" data-go="s1final">Бежать за тыквой</a>
+            <button class="btn" data-action="show-pumpkin" data-pumpkin="7">Идти по следам к чулану/button>
             <a class="btn" data-go="s1b">Развернуться</a>
           </div>
         </div>
@@ -208,7 +203,7 @@
         <p>Дверь открывается. Вы оказываетесь в общем зале факультета Слизерин, но тыквы нигде не видно... Вы осторожно осматриваетесь. Бум! Что-то ударило вас по голове и вы падаете.</p>
         <p><strong>Поздравляем, вы были атакованы тыквой в Общем Зале и лежите без сознания!</strong></p>
         <div class="btns">
-          <button class="btn" data-action="search-pumpkin">Постараться посмотреть на тыкву</button>
+          <button class="btn" data-action="show-pumpkin" data-pumpkin="6">Постараться посмотреть на тыкву</button>
         </div>
       </div></div>
     </div>
@@ -269,7 +264,7 @@
         <h2>Каминная факультета Слизерин</h2>
         <p>Вы заходите в уютную комнату. Здесь очень тепло и уютно, и вы бы с радостью вздремнули, но снова слышите шепот.</p>
         <div class="btns">
-          <button class="btn" data-action="search-pumpkin">Искать здесь</button>
+          <button class="btn" data-action="show-pumpkin" data-pumpkin="5">Искать здесь</button>
           <a class="btn" data-go="s1b">Развернуться</a>
         </div>
       </div></div>
@@ -329,7 +324,7 @@
           <p>Открыв глаза, вы понимаете, что вам тяжело вздохнуть. На вашей груди сидит тыква.</p>
 
           <div class="btns">
-            <button class="btn" data-action="search-pumpkin">Схватить</button>
+            <button class="btn" data-action="show-pumpkin" data-pumpkin="1">Схватить</button>
           </div>
         </div>
       </div>
@@ -345,6 +340,7 @@
         <div class="btns">
           <a class="btn" data-go="reading_pre">К библиотеке</a>
           <a class="btn" data-go="prefects_pre">К административному крылу</a>
+          <button class="btn" data-action="show-pumpkin" data-pumpkin="4">Посмотреть здесь</button>
           <a class="btn" data-go="deep_corridor">Развернуться</a>
         </div>
       </div></div>
@@ -360,6 +356,7 @@
         <h2>Любимый запах книг! А вы и не знали, что в в Слизерине есть библиотека! Вы медленно проходите мимо стеллажей, и вдруг... это что, плач? Кто там плачет?.</h2>
         <div class="btns">
           <a class="btn" data-go="reading_final">Открыть дверь</a>
+          <button class="btn" data-action="show-pumpkin" data-pumpkin="11">Проверить, кто плачет</button>
           <a class="btn" data-go="corridor_next">Назад</a>
         </div>
       </div></div>
@@ -374,7 +371,7 @@
         <p>Тыква устроилась между стопками книг на столе. Кажется, она что-то читает. Или делает вид.</p>
         <p><strong>Поздравляем! Вы нашли тыкву в Читательском зале.</strong></p>
         <div class="btns">
-           <button class="btn" data-action="search-pumpkin">Схватить</button>
+           <button class="btn" data-action="show-pumpkin" data-pumpkin="9">Схватить</button>
         </div>
       </div></div>
     </div>
@@ -389,13 +386,7 @@
         <div class="btns">
           <a class="btn" data-go="prefects_final">Открыть дверь</a>
           <a class="btn" data-go="corridor_next">Назад</a>
-          <button class="btn"
-          data-action="empty-search"
-          data-empty-text="Похоже, следы ведут дальше. Тыквы здесь нет"
-          data-locked-text="😵 Вы обыскались до изнеможения. Идите спать."
-          data-locked-go="s0">
-    Осмотреться тут
-  </button>
+         <button class="btn" data-action="show-pumpkin" data-pumpkin="3">Осмотреться тут</button>
         </div>
       </div></div>
     </div>
@@ -477,7 +468,7 @@
   </section>
 
   <section id="greenhouse_pre" class="screen">
-    <div class="fullbg"><img src="images/opendoor.png" alt="Запотевшие стекла и зелень"></div>
+    <div class="fullbg"><img src="images/opendoor.png" alt=""></div>
     <div class="overlay">
       <div class="wrap"><div class="card centered">
         <div class="pill">Оранжерея</div>
@@ -498,7 +489,7 @@
         <p>Вы попадаете в Слизеринскую Оранжерею. Идеальное место, чтобы спрятаться тыкве, не так ли?</p>
         <p><strong>Поздравляем! Вы нашли тыкву в Оранжерее.</strong></p>
         <div class="btns">
-         <button class="btn" data-action="search-pumpkin">Осмотреться</button>
+         <button class="btn" data-action="show-pumpkin" data-pumpkin="12">Осмотреться</button>
           <a class="btn" data-go="stairs_down">Выйти</a>
         </div>
       </div></div>
@@ -526,7 +517,7 @@
         <div class="pill">Кухня</div>
         <p>Вероятно, это самое опасное место для тыквы во всем замке! Но, вероятно, тыква сделала ставки именно на это. Стоит осмотреться?</p>
          <div class="btns"></div>   
-         <button class="btn" data-action="search-pumpkin">Осмотреться</button>
+         <button class="btn" data-action="show-pumpkin" data-pumpkin="2">Осмотреться</button>
           <a class="btn" data-go="stairs_down">Да не, тыква сюда не пошла бы. Пойду я</a>
         </div>
       </div></div>
@@ -536,6 +527,7 @@
   <script src="./app.js" defer></script>
 </body>
 </html>
+
 
 
 
