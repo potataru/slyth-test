@@ -179,16 +179,21 @@ document.addEventListener('click', (e) => {
 
 
 
-// кнопка рандомной тыквы
-
+// кнопка найденной тыквы
 document.addEventListener('click', (e) => {
-  if (!e.target.matches('[data-action="search-pumpkin"]')) return;
+  const btn = e.target.closest('[data-action="show-pumpkin"]');
+  if (!btn) return;
 
-  const roll = Math.floor(Math.random() * 15) + 1;
+  const num = btn.getAttribute('data-pumpkin'); 
   const popup = document.getElementById('popup');
   const popupText = popup.querySelector('.popup-text');
 
-  popupText.textContent = `Поздравляем! Вы нашли тыкву №${roll}! Сделайте скриншот и покажите Всаднику Тыквовина`;
+  if (num) {
+    popupText.textContent = `Поздравляем! Вы нашли тыкву №${num}! Сделайте скриншот и покажите Всаднику Тыквовина.`;
+  } else {
+    popupText.textContent = `Тыквы тут нет...`;
+  }
+
   popup.classList.add('active');
 });
 
@@ -196,6 +201,7 @@ document.addEventListener('click', (e) => {
 document.querySelector('.popup-close').addEventListener('click', () => {
   document.getElementById('popup').classList.remove('active');
 });
+
 
 // текст 
 
@@ -205,6 +211,7 @@ function setRealVh() {
 }
 window.addEventListener('load', setRealVh);
 window.addEventListener('resize', setRealVh);
+
 
 
 
