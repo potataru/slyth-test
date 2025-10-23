@@ -9,7 +9,7 @@
   --radius:16px;
 
 
-  --ui-size:1 rem;     
+  --ui-size:2rem;     
   --ui-lh:1.2;          
 }
 
@@ -318,6 +318,7 @@ body {
 /* Аним */
 @keyframes pulse{ 0%,100%{opacity:.6;} 50%{opacity:1;} }
 @keyframes fadeUp{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
 
 
 
