@@ -1,4 +1,3 @@
-/* ========== ПЕРЕМЕННЫЕ ========== */
 :root{
   --bg:#0b0f12;
   --ink:#e8eef2;
@@ -319,6 +318,7 @@ body {
 /* Аним */
 @keyframes pulse{ 0%,100%{opacity:.6;} 50%{opacity:1;} }
 @keyframes fadeUp{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
 
 
 
