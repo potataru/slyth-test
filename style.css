@@ -64,9 +64,6 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-#s0 .overlay{
-  overflow: visible;
-}
 
 @supports (height: 100dvh) {
   .overlay { height: 100dvh; }
@@ -119,9 +116,9 @@ body {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 24px;              /* можно 28px, как раньше */
+  bottom: 24px;              
   z-index: 3;
-  pointer-events: none;      /* клики проходят сквозь надпись */
+  pointer-events: none;    
 }
 
 /* Карточки */
@@ -318,6 +315,7 @@ body {
 /* Аним */
 @keyframes pulse{ 0%,100%{opacity:.6;} 50%{opacity:1;} }
 @keyframes fadeUp{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
 
 
 
